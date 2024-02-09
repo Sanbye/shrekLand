@@ -1,0 +1,131 @@
+body {
+   background-color: black;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.bigEyesContainer{
+   display: flex;
+}
+
+.circle-wrapper, .wrapper2{
+  position: relative;
+}
+
+.bigEye {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #080708;
+   margin: 20px;
+   height: 200px;
+   width: 400px;
+   border-radius: 50%;
+   overflow: hidden;   
+}
+
+.bigEye::after, .bigEye::before{
+   content: '';
+   position: absolute;
+   z-index: 100;
+   left: 0;
+   height: 200px;
+   width: 400px;
+   border-radius: 30%;
+   background-color: black;
+   transition: all 0.2s ease-in;
+}
+
+.bigEye::before{
+   top: -100%
+}
+
+.bigEye::after{
+   top: 100%
+}
+
+.bigEye:hover::before, .bigEye:hover::after{
+   top: 0;
+   transition: all 0.2s ease-in;
+}
+
+.circle-layer1 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width:100px;
+   height:100px;
+   border-radius:51%;
+   position:absolute;
+   margin:100px;
+   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(255,255,255,0) 90%);
+}
+
+.circle-layer2 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width:100px;
+   height: 100px;
+   border-radius:51%;
+   position:relative;
+   margin:100px;
+}
+
+.circle-layer3{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100px;
+   height: 100px;
+   border-radius: 51%;
+   position: absolute;
+   top: calc(50% - 150px);
+   left: calc(50% - 150px);
+   margin: 100px;
+}
+
+.circle {
+   position:absolute;
+   height: 20px;
+}
+
+.circle img {
+   height: 20px;
+}
+
+.rotate1{
+   animation: rotate infinite linear 16s;
+}
+
+@keyframes rotate {
+   0% {
+       transform: rotate(0);
+   }
+
+   0% {
+       transform: rotate(359deg);
+   }
+}
+
+.rotate2{
+   animation: rotate2 infinite linear 16s;
+}
+
+@keyframes rotate2 {
+   0% {
+       transform: rotate(0);
+   }
+
+   0% {
+       transform: rotate(-359deg);
+   }
+}
+
+.rotate3{
+   animation: rotate2 infinite linear 2s;
+}
+

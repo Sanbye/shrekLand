@@ -1,0 +1,463 @@
+body {
+    background-color: rgb(37, 37, 37);
+    margin: 0;
+    color: ghostwhite;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+
+#root{
+
+    height: 100vh;
+    width: 100vw;
+}
+
+/*header*/
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 16vh;
+    background-color: rgb(24, 169, 24);
+    text-align: center;
+    font-size: 5vh;
+}
+
+header > h1 {
+    font-size: 6vh;
+    margin: 0;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    background-color: rgb(8, 70, 8);
+}
+
+#navbar {
+    position: relative;
+    display: flex;
+    margin: 0;
+    
+}
+
+#navbar>span {
+    display: inline-block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.shrek-check{
+    display: flex;
+    
+}
+
+#shrekRoarImg {
+    display: none;
+    transition: height 1.3s cubic-bezier(.91,-0.06,0,1.42);
+    height: 1rem;
+}
+
+#shrekRoarImg:hover {
+    height: 40vh;
+}
+
+#shrekRoar:hover #shrekRoarImg {
+    display: block;
+    position: absolute;
+    top: 100%;
+}
+
+#shrekOKLM {
+    display: none;
+    height: 15vh;
+    bottom: 100%;
+    position: absolute;
+}
+
+#shrekSus {
+    display: none;
+    height: 25vh;
+    left: 100vw;
+    z-index: 10;
+    position: absolute;
+}
+
+#shrekSusBar:hover {
+    cursor: help;
+}
+
+@keyframes SUSYBAKA {
+
+    0% {
+        left: 100vw;
+    }
+
+    50% {
+        left: 90vw;
+    }
+
+    100% {
+        left: 100vw;
+    }
+}
+
+#shrekThink {
+    display: none;
+    height: 8vh;
+    bottom : 100%;
+    z-index: 10;
+    position : absolute;
+
+}
+
+@keyframes THINK {
+
+    0% {
+        bottom: 100%;
+        left:-10%;
+        rotate: 0deg;
+    }
+
+    25% {
+        bottom: 0%;
+        left: 100%;
+        rotate: 90deg;
+    }
+
+    50% {
+        bottom: -100%;
+        left:0%;
+        rotate: 180deg;
+    }
+
+    75%{
+        bottom: 0%;
+        left: -110%;
+        rotate: 270deg;
+    }
+
+    100% {
+        bottom: 100%;
+        left:-10%;
+        rotate: 360deg;
+    }
+}
+
+#ThinkBar {
+    position: relative;
+}
+
+@keyframes RunningHead {
+    0% {
+        top:0;
+        left:0;
+    }
+
+    25% {
+        top:0;
+        left:95vw;
+    }
+
+    50% {
+        top:90vh;
+        left:95vw;
+    }
+
+    75%{
+        top:90vh;
+        left:0;
+    }
+
+    100% {
+        top:0;
+        left:0;
+    }
+}
+
+@keyframes TurningHead {
+
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: -360deg;
+    }
+}
+
+#shrekHead {
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 20;
+    height: 10vh;
+}
+
+#shrekDab {
+
+    height: 20vh;
+    display: none;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    z-index: 10;
+
+}
+
+@keyframes DABrotate {
+
+    from {
+        transform : rotateY(180deg);
+    }
+
+    to {
+        transform : rotateY(360deg);
+    }
+}
+
+@keyframes DABmove {
+
+    0% {
+        bottom: 0%;
+        right: 0%;
+    }
+
+    15% {
+        bottom: 25%;
+        right: 25%;
+    }
+
+    30% {
+        bottom: 75%;
+        right: 75%;
+    }
+
+    50% {
+        bottom: 100%;
+        left: 10%;
+    }
+
+    65% {
+        bottom: 80%;
+        left: 30%;
+    }
+
+    90% {
+        bottom: 40%;
+        left: 70%;
+    }
+
+    100% {
+        bottom: 0%;
+        right: 0%;
+    }
+}
+
+/*fin header*/
+
+#hidden-shrek {
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+    left: -350px;
+    transition: left 1s;
+}
+
+#hidden-shrek:hover {
+    left: -100px;
+}
+
+#shrekCurious {
+    height: 335px;
+    transform: rotate(90deg);
+}
+
+#textBubble {
+    width: 11vw;
+    transform: rotate(180deg);
+    position: relative;
+    left: 9vw;
+}
+
+#hidden-shrek > div {
+    border-radius: 2.5%;
+    height: 50px;
+    position: relative;
+    background-color: gainsboro;
+    top: -100px;
+    left: 180px;
+    background: transparent;
+}
+
+#hidden-shrek > div > p {
+    color: black;
+    padding: 5px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#sequence-clue > .square {
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    transform: rotate(45deg);
+    z-index: 10;
+    transition: bottom left;
+}
+
+#sequence-clue > .square:hover {
+    bottom: -35px;
+    left: -60px;
+}
+
+#sequence-clue > .square > p {
+    position: relative;
+    left: 35px;
+    bottom: 0px;
+    color: black;
+}
+
+
+#fake-corner-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#shrekAngry {
+    position: absolute;
+    top: -20vw;
+    right: 15vw;
+    width: 8vw !important;
+    transition: top 2s ease;
+}
+
+
+#shrek-log {
+    background-color: rgb(56, 56, 56);
+    border: 5px solid greenyellow;
+    position: absolute;
+    width: 15vw;
+    height: 83vh;
+    right: 0;
+    transition: height 1s cubic-bezier(.51,.06,.59,1.01);
+    overflow: hidden;
+}
+
+#shrek-list > p {
+    padding-left: 5px;
+
+}
+
+#shrek-list-total {
+    padding: 5px;
+    border: 3px solid white;
+    margin: 0 0;
+}
+
+#shrek-log-minimize {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    right: 3px;
+    top: 3px;
+}
+
+#shrek-in-letter {
+    position: relative;
+    transition: top 2s;
+    top: 0px;
+}
+
+#shrek-in-letter:hover {
+    cursor: help;
+}
+
+#shrekVengeance {
+    position: absolute;
+    top: 40vh; 
+    left: 45vw; 
+    width: 300px;
+
+}
+
+.shrek:hover {
+    cursor: pointer;
+}
+
+#swamp {
+    position: absolute;
+    display: flex;
+    height: 30vh;
+    bottom: 0;
+    width: 100vw;
+    align-items: flex-end;
+
+}
+
+#shrekFleche {
+    margin-bottom: -20px;
+    margin-left: -20px;
+}
+
+.grass {
+    height: 15vh;
+    margin-right: -8vw;
+    position: relative;
+    bottom: -10px;
+}
+
+#hidden-in-grass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#shrekSwamp {
+    bottom: -16vh;
+    transition: bottom 2s cubic-bezier(.1,.96,.58,1.28);
+    position: absolute;
+}
+
+#special-grass {
+    z-index: 4;
+    cursor: help;
+    right: 2vw;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+#forniteShrek{
+    animation: fornite 1s ease-in infinite alternate-reverse;
+}
+
+@keyframes fornite {
+    0%{
+        transform: rotateY(0);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+}
