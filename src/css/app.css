@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -56,7 +60,7 @@ code {
 
 .buttons_container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -75,4 +79,86 @@ code {
 .buttons_container button:hover{
     background-color: #1dd067;
     border: 3px solid #1dd067;
+}
+
+.dialogBox, .buttons_container input{
+    background: black;
+    color: wheat;
+    border: wheat 3px solid;
+    padding: 1rem;
+    text-align: justify;
+    width: 30vw;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.buttons_container input{
+    padding: 0.5rem;
+    width: max-content;
+}
+
+.dialogAuthor {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: oblique;
+    text-decoration: underline solid;
+    margin: 0 0 2rem 0;
+    line-height: 2rem;
+}
+
+::backdrop {
+    background: black;
+}
+
+.hideCursor::backdrop{
+    cursor: none;
+}
+
+.hideCursor{
+    cursor: none;
+}
+
+.dialogMessage{
+    margin-bottom: 2rem;
+}
+
+.dialogMessage span{
+    display: inline-block;
+    font-size: 1em;
+}
+
+.dialogButton{
+    border: 1px solid wheat;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-weight: bold;
+    transition: all 0.5s ease;
+
+}
+
+.dialogButton:hover{
+    background: wheat;
+    color: black;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+#test{
+    height: 100vh;
+    width: 100vw;
+}
+
+#test img{
+    filter: blur(0);
+    transition: all 10s;
+}
+
+#test:hover{
+    filter: blur(70px);
+    transition: all 10s;
+}
+
+.newPointer{
+    pointer-events: none;
+    position: fixed;
 }

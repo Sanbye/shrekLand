@@ -57,7 +57,7 @@ export default function Start() {
                 </div>
             </div>}
             {step === 4 && <div className='box_info'>
-                <p>Ok, but if you are epileptic, you shouldn't continu, this is no joke</p>
+                <p>Ok, but if you are epileptic, you shouldn't continue, this is no joke</p>
                 <div className='buttons_container'>
                     <button onClick={()=>handleConfirm(true)}>I'm not</button>
                     <button onClick={()=>handleConfirm(false)}>I'm epileptic, I will leave for my safety</button>

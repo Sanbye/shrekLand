@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import '../css/eyes.css'
+import DialogBox from "../components/DialogBox"
 
 const breath = new Audio("audio/Heavy Breathing - Sound Effect.mp3")
 const creepyMusic = new Audio("audio/Return of the Banshee.mp3")
@@ -19,8 +20,22 @@ function angle(cx, cy, ex, ey){
 
 }
 
-
 export default function Eyes(){
+
+    const buttons = [
+        {text: 'Huh?', value: true, order: 0, style: null},
+        {text: '...', value: true, order: 1, style: null},
+        {text: '...', value: true, order: 2, style: null},
+        {text: 'Why?', value: true, order: 3, style: null},
+        {text: 'Wait!', value: true, order: 4, style: null}
+    ]
+    const messages = [
+        "What are you doing here ?",
+        "I mean, you are not supposed to be here...",
+        'Who on earth visits a site named "SHREKLAND.com" seriously?',
+        "Anyway, you should leave.",
+        "NOW."
+    ]
 
     const navigate = useNavigate()
     const [eyes, setEyes] = useState([])
@@ -102,7 +117,6 @@ export default function Eyes(){
         }
     }, [eyes, mouseX.current, mouseY.current, start])
 
-    
     const breathSound = () => {
         if (!end){
             setPaused(true)
@@ -116,7 +130,6 @@ export default function Eyes(){
         }
     }
 
-        
     const hearbeatSound = () => {
         if(!end){
             hearbeat.play()
@@ -143,7 +156,6 @@ export default function Eyes(){
             setEnd(true)
           }
         }, 100)
-        
     
         return () => {
           clearInterval(interval1)
@@ -254,22 +266,15 @@ export default function Eyes(){
                 jumpScare.pause()
                 breath.pause()
                 navigate('/big-eyes')
-            }, 500)
+            }, 800)
         }
         
     }, [end])
     
     return (
         <>  
-            {!start && <div className='info_container'>
-                <div className='box_info'>
-                    <p>???</p>
-                    <div className='buttons_container'>
-                        <button onClick={handleStart}>Yes</button>
-                    </div>
-                </div>
-            </div>}
-            <section id="eyes_container" ref={eyes_containerRef} style={start? {display: "flex"} : {display: "none"}}>
+            <DialogBox messages={messages} author={"?"} buttons={buttons} handleFunc={handleStart}/>
+            <section id="eyes_container" ref={eyes_containerRef} >
                 <div id="noEscape">
                     THERE IS NO ESCAPE
                 </div>

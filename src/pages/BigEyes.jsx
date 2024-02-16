@@ -1,10 +1,23 @@
 import BigEye from "../components/BigEye"
 import { useNavigate } from 'react-router-dom'
-import { useState } from "react"
+import DialogBox from "../components/DialogBox"
 
 export default function BigEyes() {
+    const buttons = [
+        {text: 'Yes...', value: true, order: 0, style: null},
+        {text: 'But why?', value: true, order: 1, style: null},
+        {text: '...', value: true, order: 2, style: null},
+        {text: 'Who?', value: true, order: 3, style: null}
+    ]
+    
+    const messages = [
+        "Still here ?",
+        "Just let me be!",
+        "Fuck this, I'm out.",
+        "He'll keep an EYE on you, good luck."
+    ]
 
-    const [start, setStart] = useState(false)
+    const navigate = useNavigate()
 
     const whiteNoise = new Audio('/audio/whiteNoise.mp3')
     whiteNoise.volume = 0.3
@@ -12,24 +25,29 @@ export default function BigEyes() {
     const handleStart = ()=>{
         whiteNoise.play()
         whiteNoise.loop = true
-        setStart(true)
+    }
+
+    const handleChange = (e)=>{
+        const newValue = e.target.value.toUpperCase();
+        if (newValue === "THEREISNOESCAPE") {
+            whiteNoise.loop = false
+            whiteNoise.pause()
+            navigate("/bargaining")
+        }
     }
 
     return (
         <>  
-            {!start && <div className='info_container'>
-                <div className='box_info'>
-                    <p>Things just started my friend</p>
-                    <div className='buttons_container'>
-                        <button onClick={handleStart}>???</button>
-                    </div>
-                </div>
-            </div>}
-            {!start && <div className="overlay"></div>}
+            <DialogBox messages={messages} author={"??"} buttons={buttons} handleFunc={handleStart}/>
             <div className="bigEyesContainer">
                 <BigEye/>
                 <BigEye/>
             </div>
+            <input
+                style={{visibility: "hidden"}}
+                onChange={handleChange}
+            ></input>
+            
         </>
     )
 }

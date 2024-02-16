@@ -2,7 +2,9 @@ import { useEffect} from "react"
 import '../css/eye.css'
 import CircleWrapper from './CircleWrapper'
 
+
 const BigEye= ()=>{
+    
     useEffect(() => {
 
         const eyes = document.querySelectorAll(".circle-wrapper");

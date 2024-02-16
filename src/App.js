@@ -6,7 +6,8 @@ import Shrek from './pages/Shrek';
 import GoodBye from './pages/GoodBye';
 import Eyes from './pages/Eyes';
 import BigEyes from './pages/BigEyes'
-
+import Graph from './pages/Graph';
+import Bargaining from './pages/Bargaining';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
         <Route path="/shrek" exact element={<Shrek/>}/>
         <Route path="/eyes" exact element={<Eyes/>}/>
         <Route path="/big-eyes" exact element={<BigEyes/>}/>
+        <Route path="/bargaining" exact element={<Bargaining/>}/>
         <Route path="/goodBye" exact element={<GoodBye/>}/>
+        <Route path="/test" exact element={<Graph/>}/>
       </Routes>
     </Router>
   );
