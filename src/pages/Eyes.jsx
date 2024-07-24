@@ -70,7 +70,7 @@ export default function Eyes(){
                     eye.classList.add('eye')
                     eyes_containerRef.current.appendChild(eye)
 
-                    const eyeTop = j > 0 ? 30 * j : 0
+                    const eyeTop = j > 0 ? 50 * j : 0
                     const eyeLeft = 60 * i
 
                     eye.style.top = `${eyeTop}px`
@@ -278,7 +278,7 @@ export default function Eyes(){
                 <div id="noEscape">
                     THERE IS NO ESCAPE
                 </div>
-                <img src="./img/obunga6.png" id="obunga" ref={obungaRef}></img>
+                <img src="./img/obunga.png" id="obunga" ref={obungaRef}></img>
             </section>
             <div id="flashlight" ref={flashlightRef}></div>
         </>

@@ -1,0 +1,69 @@
+#killCount{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    color: #B31B1B;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+#miceContainer{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.mice{
+    max-height: 50px;
+    position: absolute;
+    bottom: 0;
+    animation: miceMoves 2s ease 0s infinite;
+    cursor: pointer;
+}
+
+@keyframes deadMice {
+    0% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+
+    50% {
+        bottom: 50px;
+    }
+
+    100% {
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes miceMoves {
+    0% {
+        transform: translate(0, 0) rotateY(0);
+    }
+
+    50% {
+        transform: translate(-200px, 0) rotateY(0); 
+    }
+
+    51% {
+        transform: translate(-200px, 0) rotateY(180deg); 
+    }
+
+    70%{
+        transform: translate(-150px, 0) rotateY(180deg); 
+    }
+
+    75%{
+        transform: translate(-140px, -50px) rotateY(180deg); 
+    }
+
+    80%{
+        transform: translate(-120px, 0) rotateY(180deg); 
+    }
+
+    100% {
+        transform: translate(0, 0) rotateY(180deg); /* Retour à la position initiale */
+    }
+}

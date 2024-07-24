@@ -9,7 +9,7 @@ export default function Start() {
 
     useEffect(() => {
         if (comfirm === false) {
-          navigate('/goodBye')
+          navigate('/goodbye')
         }
         if(step >6){
             navigate('/shrek')
@@ -36,7 +36,7 @@ export default function Start() {
                 <p>You are about to visit the magical place named SHREKLAND</p>
                 <p>On this very website SHREKLAND.com</p>
                 <div className='buttons_container'>
-                    <button onClick={()=>handleConfirm(true)}>OK</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(true)}>OK</button>
                     <img src='/imagesShrek/shrekHead.png' style={{height: "70px"}}></img>
                 </div>
             </div>}
@@ -44,38 +44,38 @@ export default function Start() {
                 <h1>Welcome To SHREKLAND</h1>
                 <p>You are sure ?</p>
                 <div className='buttons_container'>
-                    <button onClick={()=>handleConfirm(true)}>Yes</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(true)}>Yes</button>
                     <img src='/imagesShrek/shrekHead.png' style={{height: "70px"}}></img>
-                    <button onClick={()=>handleConfirm(false)}>No</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(false)}>No</button>
                 </div>
             </div>}
             {step === 3 && <div className='box_info'>
                 <p>Don't you have anything else to do ?</p>
                 <div className='buttons_container'>
-                    <button onClick={()=>handleConfirm(false)}>Yes</button>
-                    <button onClick={()=>handleConfirm(true)}>No</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(false)}>Yes</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(true)}>No</button>
                 </div>
             </div>}
             {step === 4 && <div className='box_info'>
-                <p>Ok, but if you are epileptic, you shouldn't continue, this is no joke</p>
+                <p>Ok, but if you are epileptic, you shouldn't continue, SERIOUSLY you will risk a seizure!</p>
                 <div className='buttons_container'>
-                    <button onClick={()=>handleConfirm(true)}>I'm not</button>
-                    <button onClick={()=>handleConfirm(false)}>I'm epileptic, I will leave for my safety</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(true)}>I'm not</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(false)}>I'm epileptic, I will leave for my safety</button>
                 </div>
             </div>}
             {step === 5 && <div className='box_info'>
                 <p>Last chance, do you want to continu ?</p>
                 <div className='buttons_container'>
-                    <button onClick={()=>handleConfirm(false)}>No</button>
-                    <button onClick={()=>handleConfirm(false)}>No</button>
-                    <button onClick={()=>handleConfirm(true)} style={{position: "absolute", top: "440px", left: "-730px"}}>Yes</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(false)}>No</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(false)}>No</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(true)} style={{position: "absolute", top: "440px", left: "-730px"}}>Yes</button>
                 </div>
             </div>}
 
             {step === 6 && <div className="box_info">
-                <p>For optimal use, we recommend putting this page in full-screen mode</p>
+                <p>For optimal use, we recommend putting this page in full-screen mode (F11)</p>
                 <div className="buttons_container">
-                    <button onClick={()=>handleConfirm(true)}>OK</button>
+                    <button className='buttonShrekDialog' onClick={()=>handleConfirm(true)}>OK</button>
                 </div>
             </div>}
 

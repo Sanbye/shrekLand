@@ -44,7 +44,7 @@ export default function BigEyes() {
                 <BigEye/>
             </div>
             <input
-                style={{visibility: "hidden"}}
+                style={{backgroundColor: "#080708", border: "none", position: "absolute", bottom: "2rem", right: "2rem"}}
                 onChange={handleChange}
             ></input>
             

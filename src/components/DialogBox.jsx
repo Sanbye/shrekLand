@@ -39,7 +39,7 @@ const DialogBox = ({author, messages, buttons, handleFunc, input}) => {
   return (
     <dialog className="dialogBox" ref={dialogRef}>
       <div className="dialogAuthor">{author}</div>
-      <Message message={messages[currentMessage]} key={currentMessage} />
+      <Message message={messages[currentMessage]} key={currentMessage} addClass={""}/>
       
       <div className="buttons_container">
         {buttons.map((button, index) => (

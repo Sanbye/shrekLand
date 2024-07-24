@@ -1,7 +1,7 @@
 import  React,  {  useMemo  }  from  "react";
 import { useTransition, animated } from '@react-spring/web';
 
-const Message = ({ message }) => {
+const Message = ({ message, addClass }) => {
   const items = useMemo(() =>
     message.split("").map((letter, index) => ({
       letter: letter,
@@ -27,7 +27,7 @@ const Message = ({ message }) => {
   });
 
   return (
-    <div className="dialogMessage">
+    <div className={`dialogMessage ${addClass}`}>
       {transitions((style, item) => (
         <animated.span  style={{
           ...style,

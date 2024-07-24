@@ -8,6 +8,10 @@ import Eyes from './pages/Eyes';
 import BigEyes from './pages/BigEyes'
 import Graph from './pages/Graph';
 import Bargaining from './pages/Bargaining';
+import NotHome from './pages/NotHome';
+import Chill from './pages/Chill';
+import Mice from './pages/Mice';
+import TroisD from './pages/3d';
 
 function App() {
   return (
@@ -18,8 +22,12 @@ function App() {
         <Route path="/eyes" exact element={<Eyes/>}/>
         <Route path="/big-eyes" exact element={<BigEyes/>}/>
         <Route path="/bargaining" exact element={<Bargaining/>}/>
-        <Route path="/goodBye" exact element={<GoodBye/>}/>
+        <Route path="/not-home" exact element={<NotHome/>}/>
+        <Route path="/chill" exact element={<Chill/>}/>
+        <Route path="/goodbye" exact element={<GoodBye/>}/>
         <Route path="/test" exact element={<Graph/>}/>
+        <Route path='/mice' exact element={<Mice/>}></Route>
+        <Route path='/3d' exact element={<TroisD/>}></Route>
       </Routes>
     </Router>
   );

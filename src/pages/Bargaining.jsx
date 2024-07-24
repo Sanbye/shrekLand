@@ -26,14 +26,14 @@ export default function Bargaining(){
         {text: 'Easy', value: true, order: 0, style: null},
         {text: "I don't know", value: true, order: 1, style: null},
         {text: "YES", value: true, order: 2, style: null},
-        {text: "Stay", value: true, order: 3, style: null},
-        {text: "Leave", value: false, order: 3, style: null},
-        {text: "Stay", value: true, order: 4, style: null},
-        {text: "Leave", value: false, order: 4, style: null},
-        {text: "Stay", value: true, order: 5, style: null},
-        {text: "Leave", value: false, order: 5, style: {transform: `scale(3)`, marginBottom: "2rem"}},
-        {text: "Stay", value: true, order: 6, style: /*{visibility: "hidden"}}*/null},
-        {text: "Stay", value: false, order: 6, style: null},
+        {text: "Stay", value: true, order: 3, style: {cursor: "none"}},
+        {text: "Leave", value: false, order: 3, style: {cursor: "none"}},
+        {text: "Stay", value: true, order: 4, style: {cursor: "none"}},
+        {text: "Leave", value: false, order: 4, style: {cursor: "none"}},
+        {text: "Stay", value: true, order: 5, style: {cursor: "none"}},
+        {text: "Leave", value: false, order: 5, style: {transform: `scale(3)`, marginBottom: "2rem", cursor: "none"}},
+        {text: "Stay", value: false, order: 6, style: {cursor: "none"}},
+        {text: "Stay", value: true, order: 6, style: {cursor: "none"}},
         
     ])
 
@@ -100,7 +100,8 @@ export default function Bargaining(){
     }
     
     const handleEnd = ()=>{
-        navigate('/goodBye');
+        dialogRefGG.current.close()
+        navigate('/not-home')
     }
 
 
@@ -130,17 +131,16 @@ export default function Bargaining(){
             handleShreked();
         } else if (yes) {
             if (
-                currentMessage < messages.length - 1  ||
+                !gg && currentMessage < messages.length - 1  ||
                 currentMessage < messagesGG.length - 1
             ) {
                 setCurrentMessage(currentMessage + 1);
             } else {
-                dialogRef.current.close();
                 setCurrentMessage(0);
                 handleEnd();
             }
         } else {
-            navigate('/goodBye');
+            navigate('/goodbye');
         }
     };
 
@@ -177,8 +177,11 @@ export default function Bargaining(){
     return (
         <> 
             <dialog className="dialogBox hideCursor" ref={dialogRef}>
-                <div className="dialogAuthor">???</div>
-                <Message message={messages[currentMessage]} key={currentMessage} />
+                <div className="dialogAuthor">
+                    <span style={{textDecoration: "underline solid"}}>??? </span>
+                    <span style={{color: "black", textDecoration:"underline"}}>John Doe</span>
+                </div>
+                <Message message={messages[currentMessage]} key={currentMessage} addClass={""}/>
                 
                 <div className="buttons_container">
                     {buttons.map((button, index) => (   
@@ -209,7 +212,7 @@ export default function Bargaining(){
             </dialog>
             {gg && <dialog className="dialogBox" ref={dialogRefGG}>
                 <div className="dialogAuthor">John Doe</div>
-                <Message message={messagesGG[currentMessage]} key={currentMessage} />
+                <Message message={messagesGG[currentMessage]} key={currentMessage} addClass={""}/>
                 
                 <div className="buttons_container">
                     {buttonsGG.map((button, index) => (

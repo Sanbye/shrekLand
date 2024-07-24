@@ -246,8 +246,6 @@ export default function Shrek() {
         const sequence = ['s', 'h', 'r', 'e', 'k'];
         const requiredKey = sequence[sequencePosition];
     
-        console.log(`key press ${key}, required key ${requiredKey}`);
-    
         if (key === requiredKey) {
           setSequencePosition((prevPosition) =>{
             const newPosition = prevPosition + 1;
@@ -456,7 +454,7 @@ export default function Shrek() {
                     <h1>GG, you WON!</h1>
                     <img src="/imagesShrek/shrekDance.png" alt="fornite shrek" ref={forniteShrekRef} id='forniteShrek'/>
                     <div className='buttons_container'>
-                        <button onClick={()=>setConfirm(true)}>YAY</button>
+                        <button className='buttonShrekDialog' onClick={()=>setConfirm(true)}>YAY</button>
                     </div>
                 </div>
             </div>}

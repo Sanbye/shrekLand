@@ -64,7 +64,7 @@ code {
     align-items: center;
 }
 
-.buttons_container button{
+.buttonShrekDialog{
     background-color: #20b35d;
     color: #120C0B;
     margin: 1rem;
@@ -76,7 +76,7 @@ code {
     cursor:pointer;
 }
 
-.buttons_container button:hover{
+.buttonShrekDialog:hover{
     background-color: #1dd067;
     border: 3px solid #1dd067;
 }
@@ -133,6 +133,7 @@ code {
     padding: 0.5rem;
     font-weight: bold;
     transition: all 0.5s ease;
+    cursor: pointer;
 
 }
 
@@ -161,4 +162,10 @@ code {
 .newPointer{
     pointer-events: none;
     position: fixed;
+}
+
+.centerFlex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
